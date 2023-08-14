@@ -12,3 +12,6 @@ def messageHandler(request):
     messages = MessageInfo.objects.all()
     return render(request,'index.html',{'messages':messages})
        
+def serviceHandler(request):
+    services=ServiceInfo.objects.all()
+    return render(request,'index.html',{'services':services})
