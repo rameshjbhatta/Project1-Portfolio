@@ -1,6 +1,7 @@
-from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import  render
 from portfolio.models import *
+from django.contrib import messages
+
 
 # Code to add the frontend messages in the database
 def dataHandler(request):
@@ -8,7 +9,12 @@ def dataHandler(request):
         name = request.POST['fullName']
         email = request.POST['emailid']
         msg = request.POST['message']
-        MessageInfo.objects.create(name=name,email=email,msg=msg)
+        try:
+            MessageInfo.objects.create(name=name, email=email, msg=msg)
+            messages.success(request, 'Message sent successfully!')
+        except:
+            messages.error(request, 'Error sending message')
+
     services=ServiceInfo.objects.all()
     projects=ProjectInfo.objects.all()
     testimonials=TestimonialInfo.objects.all()

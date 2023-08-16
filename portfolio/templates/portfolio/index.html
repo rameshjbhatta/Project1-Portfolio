@@ -299,6 +299,14 @@
         <div class="container text-center">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+               {{ message }}  
+                {% endfor %}
+            </ul>
+        {% endif %}
+    
             <!-- contact form -->
             <form method="POST" action="{% url 'contactsection' %}" class="contact-form col-md-10 col-lg-8 m-auto">
                 {% csrf_token %}
@@ -332,12 +340,11 @@
             <div class="social-links text-right m-auto ml-sm-auto">
                 <a href="https://www.facebook.com/rameshbhattaa" class="link" target="_blank"><i
                         class="ti-facebook"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="https://www.linkedin.com/login" target="_blank" class="link"><i class="ti-linkedin"></i></a>
+                <a href="https://github.com/rameshjbhatta" class="link" target="_blank"><i class="ti-github"></i></a>
+                <a href="https://www.youtube.com/channel/UCufzA4cqLYMK2VV3t7lGjMA"  class="link" target="_blank"><i class="ti-youtube" ></i></a>
                 <a href="https://www.instagram.com/rbhatta13/" class="link" target="_blank"><i
                         class="ti-instagram"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
             </div>
         </footer>
     </div> <!-- end of page footer -->
