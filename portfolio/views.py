@@ -6,14 +6,13 @@ from django.http import HttpResponse
 import mimetypes
 
 def download_file(request):
-    # Fill these variables with real values
-    fl_path = 'portfolio/static/files/CV Ramesh Bhatta.pdf'
+    file_path = 'portfolio/static/files/CV Ramesh Bhatta.pdf'
     filename = 'CV Ramesh Bhatta.pdf'
 
-    fl = open(fl_path, 'rb')
-    mime_type, _ = mimetypes.guess_type(fl_path)
-    response = HttpResponse(fl, content_type=mime_type)
-    response['Content-Disposition'] = "attachment; filename=%s" % filename
+    file = open(file_path, 'rb') #open file in read mode
+    mime_type, _ = mimetypes.guess_type(file_path)  # find  9file0 media type 
+    response = HttpResponse(file, content_type=mime_type) # creates an HttpResponse object, which will be used to respond to the client's request.
+    response['Content-Disposition'] = "attachment; filename=%s" % filename #sets the Content-Disposition HTTP header in the response.
     return response
 
 
