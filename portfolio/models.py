@@ -26,4 +26,4 @@ class BlogInfo(models.Model):
        blog_author=models.CharField(max_length=100)
        blog_image = models.ImageField(upload_to='images/', null=True)
        blog_title=models.CharField(max_length=400)
-       blog_content=models.CharField(max_length=250)         
+       blog_content=models.TextField(max_length=600)         
