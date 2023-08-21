@@ -1,0 +1,24 @@
+  <!-- testimonial section -->
+  <section class="section" id="testmonial">
+    <div class="container text-center">
+        <p class="section-subtitle">What Client Think About Me ?</p>
+        <h6 class="section-title mb-6">Testmonial</h6>
+
+        <!-- row -->
+        <div class="row">
+            {% for testimony in testimonials %}
+            <div class="col-md-6">
+                <div class="testimonial-card">
+                    <div class="testimonial-card-img-holder">
+                        <img src="{{testimony.client_image.url}}" class="testimonial-card-img" alt="suresh Kunwar">
+                    </div>
+                    <div class="testimonial-card-body">
+                        <p class="testimonial-card-subtitle"> {{testimony.client_opinion}}</p>
+                        <h6 class="testimonial-card-title">{{testimony.client_name}}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div> <!-- end of container -->
+</section> <!-- end of testimonial section -->

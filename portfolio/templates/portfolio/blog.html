@@ -1,0 +1,34 @@
+
+
+    <!-- blog section -->
+    <section class="section" id="blog">
+        <!-- container -->
+        <div class="container text-center">
+            <p class="section-subtitle">Recent Posts?</p>
+            <h6 class="section-title mb-6">Blog</h6>
+            <!-- blog-wrapper -->
+            {% for blog in blogs %}
+            <div class="blog-card">
+
+                <div class="blog-card-header">
+                    <img src="{{blog.blog_image.url}}" class="blog-card-img" alt="django">
+                </div>
+                <div class="blog-card-body">
+                    <h5 class="blog-card-title">{{blog.blog_title}}</h6>
+
+                        <p class="blog-card-caption">
+                            <a href="#blog">By: {{blog.blog_author}} </a>
+                            <a href="#blog"><i class="ti-heart text-danger"></i> 234</a>
+                            <a href="#blog"><i class="ti-comment"></i> 123</a>
+                        </p>
+                        <p>{{blog.blog_content}}</p>
+
+                        <a href="#blog" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- end of blog wrapper -->
+            <!-- blog-wrapper -->
+
+        </div><!-- end of container -->
+    </section><!-- end of blog section -->
