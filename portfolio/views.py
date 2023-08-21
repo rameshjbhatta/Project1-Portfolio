@@ -5,6 +5,11 @@ from django.contrib import messages
 from django.http import HttpResponse
 import mimetypes
 
+
+
+
+
+
 def downloadFile(request):
     file_path = 'portfolio/static/files/CV Ramesh Bhatta.pdf'
     filename = 'CV Ramesh Bhatta.pdf'

@@ -26,4 +26,11 @@ class BlogInfo(models.Model):
        blog_author=models.CharField(max_length=100)
        blog_image = models.ImageField(upload_to='images/', null=True)
        blog_title=models.CharField(max_length=400)
-       blog_content=models.TextField(max_length=600)         
+       blog_content=models.TextField(max_length=600)     
+
+class Like(models.Model):
+    session_key = models.CharField(max_length=40, null=True, blank=True, default='guest_session')  # Store the session key or guest identifier
+    blog = models.ForeignKey(BlogInfo, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)  
+
+        
