@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.dataHandler, name='contactsection'),
-    path('download/', views.download_file, name='download_file'),
+    path('download/', views.downloadFile, name='download_file'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
